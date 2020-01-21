@@ -151,6 +151,8 @@
 	height: 30px;
 	overflow: hidden;
 	flex-wrap: wrap;
+	position: relative;
+	left: 30px;
 }
 
 .fullscreen .menubar:not(.compact) {
