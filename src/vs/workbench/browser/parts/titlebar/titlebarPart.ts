@@ -379,7 +379,7 @@ export class TitlebarPart extends Part implements ITitleService {
 		}
 
 		// App Icon (Native Windows/Linux)
-		if (!isMacintosh && !isWeb) {
+		if (!isMacintosh) {
 			this.appIcon = append(this.element, $('div.window-appicon'));
 			this.onUpdateAppIconDragBehavior();
 
@@ -583,7 +583,7 @@ export class TitlebarPart extends Part implements ITitleService {
 			// Only prevent zooming behavior on macOS or when the menubar is not visible
 			if ((!isWeb && isMacintosh) || this.currentMenubarVisibility === 'hidden') {
 				this.title.style.zoom = `${1 / getZoomFactor()}`;
-				if (!isWeb && (isWindows || isLinux)) {
+				if (isWeb || isWindows || isLinux) {
 					if (this.appIcon) {
 						this.appIcon.style.zoom = `${1 / getZoomFactor()}`;
 					}
@@ -594,7 +594,7 @@ export class TitlebarPart extends Part implements ITitleService {
 				}
 			} else {
 				this.title.style.zoom = null;
-				if (!isWeb && (isWindows || isLinux)) {
+				if (isWeb || isWindows || isLinux) {
 					if (this.appIcon) {
 						this.appIcon.style.zoom = null;
 					}

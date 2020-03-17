@@ -297,7 +297,7 @@ import { workbenchConfigurationNodeBase } from 'vs/workbench/common/configuratio
 					nls.localize('window.menuBarVisibility.hidden', "Menu is always hidden."),
 					nls.localize('window.menuBarVisibility.compact', "Menu is displayed as a compact button in the sidebar. This value is ignored when 'window.titleBarStyle' is 'native'.")
 				],
-				'default': isWeb ? 'compact' : 'default',
+				'default': isWeb ? 'visible' : 'default',
 				'scope': ConfigurationScope.APPLICATION,
 				'description': nls.localize('menuBarVisibility', "Control the visibility of the menu bar. A setting of 'toggle' means that the menu bar is hidden and a single press of the Alt key will show it. By default, the menu bar will be visible, unless the window is full screen."),
 				'included': isWindows || isLinux || isWeb
