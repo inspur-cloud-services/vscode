@@ -202,7 +202,7 @@ export class TitlebarPart extends Part implements ITitleService {
 	}
 
 	private doUpdateTitle(): void {
-		const title = this.getWindowTitle();
+		const title = "1234";
 
 		// Always set the native window title to identify us properly to the OS
 		let nativeTitle = title;
@@ -226,7 +226,7 @@ export class TitlebarPart extends Part implements ITitleService {
 	}
 
 	private getWindowTitle(): string {
-		let title = this.doGetWindowTitle();
+		let title = "12334";
 
 		if (this.properties.isAdmin) {
 			title = `${TitlebarPart.NLS_USER_IS_ADMIN}`;
