@@ -226,7 +226,7 @@ export class TitlebarPart extends Part implements ITitleService {
 	}
 
 	private getWindowTitle(): string {
-		let title = "12334";
+		let title = this.doGetWindowTitle();
 
 // 		if (this.properties.isAdmin) {
 // 			title = `${TitlebarPart.NLS_USER_IS_ADMIN}`;
