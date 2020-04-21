@@ -229,15 +229,15 @@ export class TitlebarPart extends Part implements ITitleService {
 		let title = this.doGetWindowTitle();
 
 		if (this.properties.isAdmin) {
-			title = `${title || this.productService.nameLong} ${TitlebarPart.NLS_USER_IS_ADMIN}`;
+			title = `${TitlebarPart.NLS_USER_IS_ADMIN}`;
 		}
 
 		if (!this.properties.isPure) {
-			title = `${title || this.productService.nameLong} ${TitlebarPart.NLS_UNSUPPORTED}`;
+			title = `${TitlebarPart.NLS_UNSUPPORTED}`;
 		}
 
 		if (this.environmentService.isExtensionDevelopment) {
-			title = `${TitlebarPart.NLS_EXTENSION_HOST} - ${title || this.productService.nameLong}`;
+			title = `${TitlebarPart.NLS_EXTENSION_HOST}`;
 		}
 
 		return title;
@@ -317,7 +317,7 @@ export class TitlebarPart extends Part implements ITitleService {
 		const folderName = folder ? folder.name : '';
 		const folderPath = folder ? this.labelService.getUriLabel(folder.uri) : '';
 		const dirty = editor?.isDirty() ? TitlebarPart.TITLE_DIRTY : '';
-		const appName = this.productService.nameLong;
+// 		const appName = this.productService.nameLong;
 		const remoteName = this.labelService.getHostLabel(REMOTE_HOST_SCHEME, this.environmentService.configuration.remoteAuthority);
 		const separator = TitlebarPart.TITLE_SEPARATOR;
 		const titleTemplate = this.configurationService.getValue<string>('window.title');
@@ -334,7 +334,7 @@ export class TitlebarPart extends Part implements ITitleService {
 			folderName,
 			folderPath,
 			dirty,
-			appName,
+// 			appName,
 			remoteName,
 			separator: { label: separator }
 		});
