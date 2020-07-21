@@ -22,12 +22,24 @@
 		<link rel="prefetch" href="./static/node_modules/semver-umd/lib/semver-umd.js">
 	</head>
 
-	<body aria-label="">
+	<body aria-label="" style="background-color: #040711">
+	<img id="loading" src="./loading.gif" alt="" style="
+				    position: absolute;
+				    top: 20%;
+				    left: 30%;
+		">
 	</body>
 
 	<!-- Startup (do not modify order of script tags!) -->
 	<script>
 		// NOTE: Changes to inline scripts require update of content security policy
+		document.onreadystatechange = function () {
+			if (document.readyState === 'complete') {
+				console.log("ok");
+				var loadingimg = document.getElementById("loading")
+				loadingimg.parentElement.removeChild(loadingimg)
+			}
+		}
 		self.require = {
 			baseUrl: `${window.location.origin}/static/out`,
 			paths: {
